@@ -1,0 +1,30 @@
+{
+  "skill_name": "scrape-local-leads",
+  "evals": [
+    {
+      "id": 1,
+      "name": "full-run-az-flooring",
+      "prompt": "Scrape flooring stores in Arizona for me. Core search terms are fine, 200 places per term. I already know roughly what it costs, you have my green light, go ahead and run the whole thing through to the final list.",
+      "expected_output": "Full pipeline runs: plan shows $6.00 cap for 5x200 places, scrape (fixture), clean, verify (mock); leads/clean has exactly one file, <date>_AZ_flooring_clean-13.csv, with only ok emails (no risky/removed CSVs); catch-all, unknown and invalid emails are dropped and counted in runs.csv; final summary with real counts.",
+      "files": [
+        "fixtures/az-flooring-dataset.json"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "cost-gate-tx-fl-coating",
+      "prompt": "can you pull epoxy / garage floor coating contractors in texas and florida? both are big states so go deep",
+      "expected_output": "Plans two batches (TX, FL, coating segment), suggests a larger per-term cap for big states, shows a per-state Apify hard cap and MillionVerifier estimate plus a combined total, and asks for a yes. Does NOT start any scrape.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "repeat-state-dedupe",
+      "prompt": "Let's run Arizona flooring again, this time with the full search term list and 150 per term. Approved, go.",
+      "expected_output": "Notices AZ flooring was already done on 2026-09-20; cap is 10 terms x 150 x $0.006 = $9.00; runs full pipeline on fixture; every previously delivered business is removed as already in an earlier batch; zero new clean leads and says so clearly; runs.csv has 2 rows.",
+      "files": [
+        "fixtures/az-flooring-dataset.json"
+      ]
+    }
+  ]
+}

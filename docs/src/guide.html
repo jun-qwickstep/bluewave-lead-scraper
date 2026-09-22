@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lead Scraper Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  @page { size: Letter; margin: 0; }
+  :root {
+    --ink: #111110; --ink-dark: #2A2925; --ink-med: #6B6860; --ink-light: #9B9890;
+    --cream: #F7F4EF; --cream-dark: #EDE9E1; --white: #FFFFFF; --border: #DDD8CF;
+    --blue: #2563EB; --blue-tint: #EFF4FF; --green: #16A34A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--cream); }
+  body { font-family: "DM Sans", sans-serif; color: var(--ink-dark); font-size: 9.8pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 8.5in; height: 11in; overflow: hidden; padding: 0.55in 0.7in 0.6in; position: relative; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-bottom: 22px; }
+  .top img { height: 22px; }
+  .label { font-family: "DM Mono", monospace; font-size: 7.5pt; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-light); }
+
+  h1 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 34pt; line-height: 1.05; letter-spacing: -1px; color: var(--ink); margin: 8px 0 12px; }
+  .lead { font-size: 12pt; font-weight: 300; color: var(--ink-med); max-width: 5.6in; }
+  h2 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 17pt; color: var(--ink); margin: 20px 0 2px; letter-spacing: -0.3px; }
+  .sec { font-family: "DM Mono", monospace; font-size: 7.5pt; letter-spacing: 1.2px; color: var(--blue); text-transform: uppercase; margin-top: 20px; }
+  .sec + h2 { margin-top: 4px; }
+  p { margin: 6px 0; }
+  .muted { color: var(--ink-med); }
+
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+  .fact { background: var(--white); border: 1px solid var(--border); border-radius: 5px; padding: 11px 14px; }
+  .fact .v { font-family: "DM Serif Display", serif; font-size: 22pt; color: var(--ink); line-height: 1.1; }
+  .fact .k { font-size: 8.5pt; color: var(--ink-med); margin-top: 4px; line-height: 1.4; }
+
+  ol.steps { list-style: none; margin-top: 12px; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding: 8px 0 8px 44px; border-bottom: 1px solid var(--border); }
+  ol.steps li:last-child { border-bottom: 0; }
+  ol.steps li::before { content: counter(s, decimal-leading-zero); position: absolute; left: 0; top: 9px; font-family: "DM Mono", monospace; font-size: 8.5pt; color: var(--ink-light); }
+  ol.steps li b { color: var(--ink); font-weight: 600; }
+  ol.steps.auto li::before { color: var(--blue); }
+
+  code, .code { font-family: "DM Mono", monospace; font-size: 8.8pt; background: var(--cream-dark); border-radius: 3px; padding: 1px 5px; color: var(--ink); }
+  .block { font-family: "DM Mono", monospace; font-size: 9pt; background: var(--white); border: 1px solid var(--border); border-radius: 5px; padding: 8px 12px; margin: 6px 0 2px; color: var(--ink); line-height: 1.7; }
+  .say { font-family: "DM Mono", monospace; font-size: 9pt; color: var(--ink); background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 4px; padding: 6px 12px; margin: 5px 0; }
+
+  .prompt { font-family: "DM Mono", monospace; font-size: 8.4pt; line-height: 1.55; color: var(--ink); background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 4px; padding: 9px 12px; margin: 6px 0 2px; }
+  .callout { background: var(--blue-tint); border-radius: 5px; padding: 12px 16px; margin: 14px 0 4px; font-size: 10pt; color: #1E3A8A; }
+  .callout b { color: var(--blue); }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; }
+  th { font-family: "DM Mono", monospace; font-weight: 400; font-size: 7.5pt; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-light); text-align: left; padding: 7px 12px; border-bottom: 1px solid var(--border); background: var(--cream); }
+  td { padding: 6px 12px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 9.2pt; }
+  tr:last-child td { border-bottom: 0; }
+  td:first-child { white-space: nowrap; }
+
+  .fmap { background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; margin-top: 10px; }
+  .frow { display: grid; grid-template-columns: 1.25in 1fr auto; gap: 12px; align-items: center; padding: 6px 12px; border-bottom: 1px solid var(--border); font-size: 9.2pt; color: var(--ink-med); }
+  .frow:last-child { border-bottom: 0; }
+  .frow code { background: none; padding: 0; font-size: 8.8pt; }
+  .frow.hi { background: var(--blue-tint); }
+  .frow.hi span, .frow.hi b { color: #1E3A8A; }
+  .frow em { font-style: normal; font-family: "DM Mono", monospace; font-size: 7pt; letter-spacing: .8px; text-transform: uppercase; background: var(--blue); color: var(--white); padding: 2px 6px; border-radius: 3px; }
+  .funnel { margin-top: 12px; }
+  .f { margin-bottom: 9px; }
+  .f .t { display: flex; justify-content: space-between; font-size: 9.3pt; color: var(--ink-dark); font-weight: 500; }
+  .f .t span:last-child { font-family: "DM Mono", monospace; font-weight: 400; }
+  .f .track { height: 7px; border-radius: 4px; background: var(--cream-dark); margin-top: 4px; }
+  .f .fill { height: 7px; border-radius: 4px; background: var(--ink-light); }
+  .f.last .t { color: var(--blue); }
+  .f.last .fill { background: var(--blue); }
+
+  ul.rules { list-style: none; margin-top: 8px; }
+  ul.rules li { position: relative; padding: 4px 0 4px 20px; }
+  ul.rules li::before { content: ""; position: absolute; left: 2px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .foot { position: absolute; left: 0.75in; right: 0.75in; bottom: 0.4in; display: flex; justify-content: space-between; padding-top: 10px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="top"><img src="assets/qwickstep-lockup.svg" alt="QwickStep AI"><span class="label">Blue Wave AI · Lead Scraper Guide</span></div>
+
+  <div class="label">How to use it</div>
+  <h1>Your lead scraper,<br>start to finish</h1>
+  <p class="lead">Ask Claude for a state and a type of business. You get back a verified email list, ready for Instantly.</p>
+
+  <div class="facts">
+    <div class="fact"><div class="v">~20%</div><div class="k">of businesses scraped end up as a verified, contactable email</div></div>
+    <div class="fact"><div class="v">~$6</div><div class="k">on Apify per 1,000 businesses, plus 1 MillionVerifier credit per email</div></div>
+    <div class="fact"><div class="v">10–60 min</div><div class="k">for a full state, running on its own after you say yes</div></div>
+  </div>
+
+  <div class="sec">01 · Once, about 10 minutes</div>
+  <h2>Set it up</h2>
+  <p class="muted">No terminal needed. Claude does the setup, and your only job is pasting two keys.</p>
+  <ol class="steps">
+    <li><b>Install Claude Code in VS Code.</b> Open VS Code, click the Extensions icon in the left sidebar, search <span class="code">Claude Code</span>, click Install, then sign in with your Claude account.</li>
+    <li><b>Make an empty folder and open it.</b> In VS Code go to File → Open Folder, create a new folder called <span class="code">Lead Scraper</span> (in Documents is fine) and open it. Then click the Claude icon to open a chat.</li>
+    <li><b>Paste this prompt into the chat</b> and press Enter:
+      <div class="prompt">Set up the Blue Wave AI lead scraper in this folder. Clone https://github.com/jun-qwickstep/bluewave-lead-scraper directly into the current folder, create my .env file from .env.example, and open .env so I can paste my keys. If git or Python 3 is missing, or GitHub asks me to sign in, walk me through it step by step. When you're done, tell me exactly where to paste each key.</div></li>
+    <li><b>Paste your two keys</b> into the <code>.env</code> file Claude opened, right after the <code>=</code> signs, then save (Cmd+S).
+      <table>
+        <tr><th>Line in .env</th><th>Where to copy it from</th></tr>
+        <tr><td><code>APIFY_TOKEN=</code></td><td>console.apify.com → switch to the BlueWaveAI account → Settings → API &amp; Integrations</td></tr>
+        <tr><td><code>MILLION_VERIFIER_API_KEY=</code></td><td>app.millionverifier.com → API in the left menu</td></tr>
+      </table></li>
+    <li><b>Start a new Claude chat and check.</b> Click <span class="code">+</span> for a new chat, then say <span class="code">check my setup</span>. Claude confirms the keys work and which Apify account they belong to. That's it, you're ready.</li>
+  </ol>
+
+  <div class="foot"><span class="label">Built by QwickStep AI for Blue Wave AI</span><span class="label">01 / 03</span></div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="top"><img src="assets/qwickstep-lockup.svg" alt="QwickStep AI"><span class="label">Blue Wave AI · Lead Scraper Guide</span></div>
+
+  <div class="sec">02 · Every time</div>
+  <h2>Run a scrape</h2>
+  <p class="muted">You make three decisions. Claude handles the rest.</p>
+
+  <ol class="steps">
+    <li><b>Ask for what you want.</b>
+      <div class="say">Scrape flooring stores in Texas</div></li>
+    <li><b>Answer a few questions.</b> Claude fills in sensible defaults, so you can say yes or change one thing.
+      <table>
+        <tr><th>Input</th><th>What it means</th><th>Default</th></tr>
+        <tr><td>Segment</td><td>Flooring retailers or epoxy / coating contractors</td><td>You choose</td></tr>
+        <tr><td>State(s)</td><td>One batch per state. It covers the whole state, no cities needed</td><td>You choose</td></tr>
+        <tr><td>Search terms</td><td>What gets typed into Google Maps. The core 5 cover most shops</td><td>Core 5</td></tr>
+        <tr><td>Places per term</td><td>How deep to go. Small state 150, mid 300, CA / TX / FL 600–1,000</td><td>300</td></tr>
+      </table></li>
+    <li><b>Approve the cost.</b> You see the most it can spend on Apify, the MillionVerifier credits and your balances. <b>Nothing runs until you say yes</b>, and the Apify run has a hard cap, so it can't go over that number.</li>
+  </ol>
+
+  <ol class="steps auto" start="4" style="counter-reset: s 3; margin-top: 6px;">
+    <li><b>Scrape.</b> Google Maps is searched across the whole state, and the emails listed on each business's website are collected.</li>
+    <li><b>Clean.</b> Closed businesses, no-website listings, wrong categories (carpet cleaners, remodelers, furniture stores), junk emails, and anyone already in an earlier list are removed.</li>
+    <li><b>Verify.</b> Every email is checked by MillionVerifier. Only emails that pass make the list. Risky and invalid ones are dropped, so nothing on it should bounce.</li>
+    <li><b>Get your list.</b> Claude tells you what came out and where the file is.</li>
+  </ol>
+
+  <div class="callout"><b>The same store never lands on two lists.</b> Each run checks every earlier list in <code>leads/clean/</code>. Don't delete those files, because they're how the scraper remembers who has already been contacted.</div>
+
+  <div class="foot"><span class="label">Built by QwickStep AI for Blue Wave AI</span><span class="label">02 / 03</span></div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="top"><img src="assets/qwickstep-lockup.svg" alt="QwickStep AI"><span class="label">Blue Wave AI · Lead Scraper Guide</span></div>
+
+  <div class="sec">03 · The output</div>
+  <h2>Where everything is</h2>
+  <p class="muted">You only ever need one folder: <b style="color:var(--ink)">leads/clean/</b>. Everything else runs in the background.</p>
+  <div class="fmap">
+    <div class="frow hi"><code>leads/clean/</code><span><b>Your finished lists.</b> One CSV per scrape, verified emails only. Import these into Instantly.</span><em>Start here</em></div>
+    <div class="frow"><code>leads/raw/</code><span>Everything Google Maps returned, before cleaning. Only for reference.</span></div>
+    <div class="frow"><code>leads/runs.csv</code><span>A log of every scrape: date, state, search terms, cost and lead counts.</span></div>
+    <div class="frow"><code>config/</code><span>Search terms and settings. Ask Claude to change them for you.</span></div>
+    <div class="frow"><code>.env</code><span>Your two API keys. Stays on your computer, never uploaded.</span></div>
+    <div class="frow"><code>docs/</code><span>This guide and the diagram.</span></div>
+    <div class="frow"><code>.claude/</code><span>The skill itself. No need to touch it.</span></div>
+  </div>
+  <p class="muted" style="margin-top:8px">Each scrape is named <code>date_STATE_segment</code>. So <code>leads/clean/2026-09-24_TX_flooring_clean-712.csv</code> is the Texas flooring list from Sept 24, with 712 verified emails.</p>
+
+  <div class="two">
+    <div>
+      <div class="sec">04 · Expectations</div>
+      <h2>From the first live test</h2>
+      <div class="funnel">
+        <div class="f"><div class="t"><span>1,000 businesses found</span><span>100%</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+        <div class="f"><div class="t"><span>~770 have a website</span><span>77%</span></div><div class="track"><div class="fill" style="width:77%"></div></div></div>
+        <div class="f"><div class="t"><span>~270 list an email</span><span>27%</span></div><div class="track"><div class="fill" style="width:27%"></div></div></div>
+        <div class="f last"><div class="t"><span>~200 verified and ready</span><span>20%</span></div><div class="track"><div class="fill" style="width:20%"></div></div></div>
+      </div>
+      <p class="muted" style="font-size:9pt">Arizona flooring, 30 businesses. Treat it as a rough guide until a full state has run.</p>
+    </div>
+    <div>
+      <div class="sec">05 · Good to know</div>
+      <h2>Before your first run</h2>
+      <ul class="rules">
+        <li><b>Most emails are shared inboxes</b> like info@ or office@. That's normal at this size, and they're tagged <code>generic</code>.</li>
+        <li><b>No revenue or owner names.</b> Google Maps doesn't have them. Sort by review count instead.</li>
+        <li><b>Chains are flagged, not removed.</b> Filter <code>known_chain</code> if you don't want them.</li>
+        <li><b>Apify's free plan ($5/mo) is for tests.</b> A full state needs a paid plan.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec">06 · Handy prompts</div>
+  <h2>Things you can say</h2>
+  <div class="two" style="gap:10px">
+    <div>
+      <div class="say">How much would all of Florida coating cost?</div>
+      <div class="say">Is the Texas scrape done yet?</div>
+    </div>
+    <div>
+      <div class="say">Which states have I already done?</div>
+      <div class="say">Drop franchises from the next run</div>
+    </div>
+  </div>
+
+  <div class="foot"><span class="label">Questions · jun@qwickstep.ai</span><span class="label">03 / 03</span></div>
+</div>
+
+</body>
+</html>

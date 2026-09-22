@@ -1,0 +1,95 @@
+{
+  "_help": "One entry per business type we scrape. Edit freely. 'core_terms' is the default search set (5 distinct terms, little overlap). 'extra_terms' get added when you ask for the full set. A place is kept only if at least one of its Google categories contains an 'allow' keyword, and dropped if its MAIN category contains a 'deny' keyword. Matching ignores upper/lower case.",
+  "flooring": {
+    "label": "Flooring retailers and dealers",
+    "core_terms": [
+      "flooring store",
+      "carpet store",
+      "floor covering store",
+      "hardwood flooring store",
+      "tile store"
+    ],
+    "extra_terms": [
+      "flooring retailer",
+      "carpet and flooring",
+      "luxury vinyl flooring",
+      "flooring contractor",
+      "shop at home flooring"
+    ],
+    "category_allow": [
+      "floor",
+      "carpet",
+      "tile",
+      "hardwood",
+      "vinyl",
+      "laminate",
+      "rug"
+    ],
+    "category_deny": [
+      "cleaning",
+      "cleaner",
+      "water damage",
+      "restoration",
+      "janitorial",
+      "home improvement store",
+      "hardware store",
+      "furniture",
+      "lumber",
+      "building materials",
+      "wholesaler",
+      "manufacturer",
+      "warehouse",
+      "concrete",
+      "epoxy",
+      "coating",
+      "construction company",
+      "general contractor",
+      "remodeler",
+      "carpet installer",
+      "repair",
+      "cabinet",
+      "solar",
+      "grocery"
+    ]
+  },
+  "coating": {
+    "label": "Epoxy and concrete coating contractors",
+    "core_terms": [
+      "epoxy flooring",
+      "garage floor coating",
+      "concrete coating",
+      "polyaspartic flooring",
+      "decorative concrete"
+    ],
+    "extra_terms": [
+      "epoxy garage floor",
+      "concrete polishing",
+      "metallic epoxy",
+      "concrete resurfacing"
+    ],
+    "category_allow": [
+      "epoxy",
+      "coating",
+      "concrete",
+      "floor",
+      "garage",
+      "resurfac",
+      "polish",
+      "masonry"
+    ],
+    "category_deny": [
+      "ready mix",
+      "concrete product",
+      "paint store",
+      "powder coating",
+      "garage door",
+      "auto",
+      "car wash",
+      "car detailing",
+      "storage",
+      "cleaning",
+      "pressure washing",
+      "supplier"
+    ]
+  }
+}

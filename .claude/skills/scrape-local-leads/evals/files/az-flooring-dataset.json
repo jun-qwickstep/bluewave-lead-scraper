@@ -1,0 +1,691 @@
+[
+ {
+  "placeId": "ChIJ_AZ_001",
+  "title": "ABC Flooring - Phoenix's Best Carpet | LVP",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store",
+   "Carpet store"
+  ],
+  "website": "https://www.abcflooring.com/?utm_source=gmb",
+  "phone": "(602) 555-0001",
+  "street": "101 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 120,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_001",
+  "searchString": "flooring store",
+  "emails": [
+   "info@abcflooring.com",
+   "mike@abcflooring.com"
+  ],
+  "phones": [],
+  "facebooks": [
+   "https://facebook.com/abcflooring"
+  ],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_001",
+  "title": "ABC Flooring - Phoenix's Best Carpet | LVP",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store",
+   "Carpet store"
+  ],
+  "website": "https://www.abcflooring.com/?utm_source=gmb",
+  "phone": "(602) 555-0001",
+  "street": "101 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 120,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_001",
+  "searchString": "carpet store",
+  "emails": [
+   "sales@abcflooring.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_002",
+  "title": "Desert Carpet Co",
+  "categoryName": "Carpet store",
+  "categories": [
+   "Carpet store"
+  ],
+  "website": "https://desertcarpet.com",
+  "phone": "(602) 555-0002",
+  "street": "102 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": true,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_002",
+  "searchString": "flooring store",
+  "emails": [
+   "info@desertcarpet.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_003",
+  "title": "Mesa Tile Gallery",
+  "categoryName": "Tile store",
+  "categories": [
+   "Tile store"
+  ],
+  "website": "https://mesatilegallery.com",
+  "phone": "(602) 555-0003",
+  "street": "103 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": true,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_003",
+  "searchString": "tile store",
+  "emails": [
+   "hello@mesatilegallery.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_004",
+  "title": "Joe's Floors",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store"
+  ],
+  "website": "",
+  "phone": "(602) 555-0004",
+  "street": "104 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_004",
+  "searchString": "flooring store",
+  "emails": [],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_005",
+  "title": "Sparkle Carpet Cleaning",
+  "categoryName": "Carpet cleaning service",
+  "categories": [
+   "Carpet cleaning service",
+   "Carpet store"
+  ],
+  "website": "https://sparklecc.com",
+  "phone": "(602) 555-0005",
+  "street": "105 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_005",
+  "searchString": "carpet store",
+  "emails": [
+   "book@sparklecc.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_006",
+  "title": "Valley Home Furnishings",
+  "categoryName": "Furniture store",
+  "categories": [
+   "Furniture store",
+   "Flooring store"
+  ],
+  "website": "https://valleyhome.com",
+  "phone": "(602) 555-0006",
+  "street": "106 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_006",
+  "searchString": "flooring store",
+  "emails": [
+   "info@valleyhome.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_007",
+  "title": "Floor & Decor",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store",
+   "Tile store"
+  ],
+  "website": "https://www.flooranddecor.com/store/phoenix",
+  "phone": "(602) 555-0007",
+  "street": "107 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 2400,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_007",
+  "searchString": "flooring store",
+  "emails": [
+   "customercare@flooranddecor.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_008",
+  "title": "Tile Pros Scottsdale",
+  "categoryName": "Tile store",
+  "categories": [
+   "Tile store"
+  ],
+  "website": "https://tilepros.com/scottsdale",
+  "phone": "(602) 555-0008",
+  "street": "108 E Main St",
+  "city": "Scottsdale",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 300,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_008",
+  "searchString": "tile store",
+  "emails": [
+   "scottsdale@tilepros.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_009",
+  "title": "Tile Pros Tempe",
+  "categoryName": "Tile store",
+  "categories": [
+   "Tile store"
+  ],
+  "website": "https://tilepros.com/tempe",
+  "phone": "(602) 555-0009",
+  "street": "109 E Main St",
+  "city": "Tempe",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 90,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_009",
+  "searchString": "tile store",
+  "emails": [
+   "tempe@tilepros.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_010",
+  "title": "Tile Pros Chandler",
+  "categoryName": "Tile store",
+  "categories": [
+   "Tile store"
+  ],
+  "website": "https://tilepros.com/chandler",
+  "phone": "(602) 555-0010",
+  "street": "110 E Main St",
+  "city": "Chandler",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 50,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_010",
+  "searchString": "tile store",
+  "emails": [
+   "chandler@tilepros.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_011",
+  "title": "Sunrise Floors LLC",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store"
+  ],
+  "website": "https://sunrisefloorsaz.com",
+  "phone": "(602) 555-0011",
+  "street": "111 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_011",
+  "searchString": "flooring store",
+  "emails": [
+   "logo@2x.png",
+   "user@domain.com",
+   "a1b2c3d4e5f60718293a4b5c@sentry.wixpress.com",
+   "dana@sunrisefloorsaz.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_012",
+  "title": "Cactus Carpet & Tile",
+  "categoryName": "Carpet store",
+  "categories": [
+   "Carpet store"
+  ],
+  "website": "https://cactuscarpet.net",
+  "phone": "(602) 555-0012",
+  "street": "112 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_012",
+  "searchString": "carpet store",
+  "emails": [
+   "u003einfo@wix.com",
+   "example@example.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_013",
+  "title": "Glendale Hardwood Co.",
+  "categoryName": "Hardwood flooring store",
+  "categories": [
+   "Hardwood flooring store",
+   "Flooring contractor"
+  ],
+  "website": "https://www.facebook.com/glendalehardwood",
+  "phone": "(602) 555-0013",
+  "street": "113 E Main St",
+  "city": "Glendale",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_013",
+  "searchString": "hardwood flooring store",
+  "emails": [
+   "glendalehardwood@gmail.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_014",
+  "title": "Copper State Floor Coverings",
+  "categoryName": "Floor covering store",
+  "categories": [
+   "Floor covering store"
+  ],
+  "website": "https://copperstatefloors.com",
+  "phone": "(602) 555-0014",
+  "street": "114 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_014",
+  "searchString": "floor covering store",
+  "emails": [
+   "info@copperstatefloors.com",
+   "bounce@copperstatefloors.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_015",
+  "title": "Catchall Carpets Inc.",
+  "categoryName": "Carpet store",
+  "categories": [
+   "Carpet store"
+  ],
+  "website": "https://catchall-carpets.com",
+  "phone": "(602) 555-0015",
+  "street": "115 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_015",
+  "searchString": "carpet store",
+  "emails": [
+   "owner@catchall-carpets.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_016",
+  "title": "Unknown Oaks Flooring",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store"
+  ],
+  "website": "https://unknownoaks.com",
+  "phone": "(602) 555-0016",
+  "street": "116 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_016",
+  "searchString": "flooring store",
+  "emails": [
+   "joe@unknownoaks.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_017",
+  "title": "Quiet Floors Studio",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store"
+  ],
+  "website": "https://quietfloors.com",
+  "phone": "(602) 555-0017",
+  "street": "117 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_017",
+  "searchString": "flooring store",
+  "emails": [],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_018",
+  "title": "Epoxy Garage Pros",
+  "categoryName": "Concrete contractor",
+  "categories": [
+   "Concrete contractor",
+   "Epoxy flooring contractor"
+  ],
+  "website": "https://epoxygaragepros.com",
+  "phone": "(602) 555-0018",
+  "street": "118 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_018",
+  "searchString": "flooring store",
+  "emails": [
+   "info@epoxygaragepros.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_019",
+  "title": "Paradise Valley Rugs",
+  "categoryName": "Rug store",
+  "categories": [
+   "Rug store"
+  ],
+  "website": "https://pvrugs.com",
+  "phone": "(602) 555-0019",
+  "street": "119 E Main St",
+  "city": "Phoenix",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_019",
+  "searchString": "flooring store",
+  "emails": [
+   "shared@azflooringgroup.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_020",
+  "title": "Scottsdale Rug Gallery",
+  "categoryName": "Rug store",
+  "categories": [
+   "Rug store"
+  ],
+  "website": "https://scottsdalerug.com",
+  "phone": "(602) 555-0020",
+  "street": "120 E Main St",
+  "city": "Scottsdale",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_020",
+  "searchString": "flooring store",
+  "emails": [
+   "shared@azflooringgroup.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_021",
+  "title": "Tucson Floor Source",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store"
+  ],
+  "website": "https://tucsonfloorsource.com",
+  "phone": "(602) 555-0021",
+  "street": "121 E Main St",
+  "city": "Tucson",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_021",
+  "searchString": "flooring store",
+  "emails": [
+   "mailto:Sarah@TucsonFloorSource.com",
+   "info@tucsonfloorsource.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_022",
+  "title": "Prescott Carpet One Floor & Home",
+  "categoryName": "Carpet store",
+  "categories": [
+   "Carpet store",
+   "Flooring store"
+  ],
+  "website": "https://prescottcarpetone.com",
+  "phone": "(602) 555-0022",
+  "street": "122 E Main St",
+  "city": "Prescott",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_022",
+  "searchString": "carpet store",
+  "emails": [
+   "info@prescottcarpetone.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_023",
+  "title": "Flagstaff Flooring Center: Carpet, Tile & More",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store"
+  ],
+  "website": "https://flagfloors.com",
+  "phone": "(602) 555-0023",
+  "street": "123 E Main St",
+  "city": "Flagstaff",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_023",
+  "searchString": "flooring store",
+  "emails": [
+   "office@flagfloors.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ },
+ {
+  "placeId": "ChIJ_AZ_024",
+  "title": "Yuma Vinyl & Laminate",
+  "categoryName": "Flooring store",
+  "categories": [
+   "Flooring store",
+   "Vinyl flooring store"
+  ],
+  "website": "https://yumavinyl.com",
+  "phone": "(602) 555-0024",
+  "street": "124 E Main St",
+  "city": "Yuma",
+  "state": "Arizona",
+  "postalCode": "85004",
+  "countryCode": "US",
+  "totalScore": 4.6,
+  "reviewsCount": 40,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "url": "https://www.google.com/maps/place/?q=place_id:ChIJ_AZ_024",
+  "searchString": "flooring store",
+  "emails": [
+   "rob@yumavinyl.com"
+  ],
+  "phones": [],
+  "facebooks": [],
+  "instagrams": []
+ }
+]

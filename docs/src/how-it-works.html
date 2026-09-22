@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How the Lead Scraper Works</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #111110; --ink-dark: #2A2925; --ink-med: #6B6860; --ink-light: #9B9890;
+    --cream: #F7F4EF; --cream-dark: #EDE9E1; --white: #FFFFFF; --border: #DDD8CF;
+    --blue: #2563EB; --blue-tint: #EFF4FF; --green: #16A34A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1400px; background: var(--cream); font-family: "DM Sans", sans-serif; color: var(--ink-dark); }
+  .page { padding: 56px 64px 48px; }
+
+  header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
+  .label { font-family: "DM Mono", monospace; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-light); }
+  h1 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 52px; letter-spacing: -1px; color: var(--ink); margin-top: 10px; line-height: 1.05; }
+  .sub { font-size: 18px; font-weight: 300; color: var(--ink-med); margin-top: 12px; }
+  header img { height: 40px; }
+
+  .lane { margin-bottom: 20px; }
+  .lane-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .lane-head .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+  .lane-head .dot.blue { background: var(--blue); }
+  .lane-head span { font-family: "DM Mono", monospace; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-med); }
+
+  .row { display: flex; align-items: stretch; }
+  .card { flex: 1; background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 22px 22px 20px; position: relative; }
+  .card.you { border-top: 3px solid var(--ink); }
+  .card.auto { border-top: 3px solid var(--blue); }
+  .arrow { width: 36px; display: flex; align-items: center; justify-content: center; color: var(--ink-light); flex: none; }
+  .step { font-family: "DM Mono", monospace; font-size: 11px; color: var(--ink-light); letter-spacing: 1px; }
+  .icon { width: 36px; height: 36px; border-radius: 4px; background: var(--cream); display: flex; align-items: center; justify-content: center; margin: 12px 0 14px; }
+  .auto .icon { background: var(--blue-tint); color: var(--blue); }
+  .icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  h3 { font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .card p { font-size: 14px; line-height: 1.55; color: var(--ink-med); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .chip { font-family: "DM Mono", monospace; font-size: 11px; padding: 4px 8px; border-radius: 3px; background: var(--cream); color: var(--ink-dark); border: 1px solid var(--cream-dark); }
+  .auto .chip { background: var(--blue-tint); border-color: #DCE7FD; color: #1E4FC2; }
+  .quote { font-family: "DM Mono", monospace; font-size: 12.5px; background: var(--cream); border-radius: 4px; padding: 8px 10px; margin-top: 12px; color: var(--ink); }
+  .gate { position: absolute; top: -12px; right: 16px; font-family: "DM Mono", monospace; font-size: 10.5px; letter-spacing: .8px; text-transform: uppercase; background: var(--ink); color: var(--white); padding: 4px 8px; border-radius: 3px; }
+
+  .connector { display: flex; justify-content: flex-end; padding-right: 12%; height: 30px; color: var(--ink-light); }
+
+  .bottom { display: grid; grid-template-columns: 1.55fr 1fr; gap: 20px; margin-top: 28px; }
+  .panel { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 26px 28px; }
+  .panel h2 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 28px; color: var(--ink); margin: 6px 0 18px; }
+  .funnel { display: flex; flex-direction: column; gap: 10px; }
+  .f-row { display: grid; grid-template-columns: 1fr 88px; align-items: center; gap: 16px; }
+  .bar { height: 40px; border-radius: 4px; background: var(--cream-dark); display: flex; align-items: center; padding: 0 14px; font-size: 14.5px; color: var(--ink-dark); font-weight: 500; }
+  .bar.last { background: var(--blue); color: var(--white); }
+  .pct { font-family: "DM Mono", monospace; font-size: 15px; color: var(--ink); text-align: right; }
+  .pct.last { color: var(--blue); font-weight: 500; }
+  .note { font-size: 13px; color: var(--ink-light); margin-top: 14px; line-height: 1.5; }
+
+  .fmap { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .frow { display: grid; grid-template-columns: 138px 1fr auto; gap: 12px; align-items: center; padding: 11px 14px; border-bottom: 1px solid var(--border); font-size: 13.5px; color: var(--ink-med); }
+  .frow:last-child { border-bottom: 0; }
+  .frow code { font-family: "DM Mono", monospace; font-size: 13px; color: var(--ink); }
+  .frow.hi { background: var(--blue-tint); }
+  .frow.hi code, .frow.hi span { color: #1E3A8A; }
+  .frow em { font-style: normal; font-family: "DM Mono", monospace; font-size: 10.5px; letter-spacing: .8px; text-transform: uppercase; background: var(--blue); color: var(--white); padding: 3px 7px; border-radius: 3px; }
+  .tree { font-family: "DM Mono", monospace; font-size: 13px; line-height: 1.9; color: var(--ink-dark); background: var(--cream); border-radius: 4px; padding: 16px 18px; }
+  .tree b { color: var(--blue); font-weight: 500; }
+  .tree .c { color: var(--ink-light); }
+  .cost { display: flex; gap: 12px; margin-top: 16px; }
+  .cost > div { flex: 1; border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; }
+  .cost .v { font-family: "DM Serif Display", serif; font-size: 26px; color: var(--ink); }
+  .cost .k { font-size: 12px; color: var(--ink-med); margin-top: 2px; }
+
+  footer { display: flex; justify-content: space-between; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border); }
+  footer span { font-family: "DM Mono", monospace; font-size: 11px; letter-spacing: 1px; color: var(--ink-light); text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <div class="label">Blue Wave AI · Lead Scraper · Claude Code skill</div>
+      <h1>From “scrape Texas” to a send-ready list</h1>
+      <div class="sub">You make three decisions. Claude does the rest and hands you a verified CSV.</div>
+    </div>
+    <img src="assets/qwickstep-lockup.svg" alt="QwickStep AI">
+  </header>
+
+  <!-- Lane 1: you -->
+  <div class="lane">
+    <div class="lane-head"><div class="dot"></div><span>You · about 2 minutes</span></div>
+    <div class="row">
+      <div class="card you">
+        <div class="step">01</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Ask in plain English</h3>
+        <p>Open the repo in Claude Code and say what you want.</p>
+        <div class="quote">“Scrape flooring stores in Texas”</div>
+      </div>
+      <div class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="card you">
+        <div class="step">02</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg></div>
+        <h3>Answer a few questions</h3>
+        <p>Defaults are filled in. Say yes or change one thing.</p>
+        <div class="chips"><span class="chip">Segment</span><span class="chip">State(s)</span><span class="chip">Search terms</span><span class="chip">Places per term</span></div>
+      </div>
+      <div class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="card you">
+        <div class="gate">Nothing runs without your yes</div>
+        <div class="step">03</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Approve the cost</h3>
+        <p>See the maximum spend first. Apify gets a hard cap, so it can never go over.</p>
+        <div class="chips"><span class="chip">Apify cap</span><span class="chip">Verify credits</span><span class="chip">Your balances</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector"><svg width="22" height="30" viewBox="0 0 24 30" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v24M6 20l6 6 6-6"/></svg></div>
+
+  <!-- Lane 2: automatic -->
+  <div class="lane">
+    <div class="lane-head"><div class="dot blue"></div><span>Claude, automatically · 10 to 60 minutes per state</span></div>
+    <div class="row">
+      <div class="card auto">
+        <div class="step">04</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Scrape Google Maps</h3>
+        <p>Covers the whole state for every term and pulls the emails listed on each business's website.</p>
+        <div class="chips"><span class="chip">leads/raw/</span></div>
+      </div>
+      <div class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="card auto">
+        <div class="step">05</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 3H2l8 9.5V19l4 2v-8.5z"/></svg></div>
+        <h3>Clean and filter</h3>
+        <p>Removes everything that shouldn't be emailed.</p>
+        <div class="chips"><span class="chip">Closed</span><span class="chip">No website</span><span class="chip">Off-category</span><span class="chip">Junk emails</span><span class="chip">Already contacted</span></div>
+      </div>
+      <div class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="card auto">
+        <div class="step">06</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h3>Verify every email</h3>
+        <p>MillionVerifier checks each address before it reaches a list.</p>
+        <div class="chips"><span class="chip">Only “ok” is kept</span><span class="chip">Risky + invalid dropped</span></div>
+      </div>
+      <div class="arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="card auto">
+        <div class="step">07</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></div>
+        <h3>Get your list</h3>
+        <p>A verified CSV, ready to import into Instantly, plus a summary of what came out.</p>
+        <div class="chips"><span class="chip">leads/clean/</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="panel">
+      <div class="label">What to expect</div>
+      <h2>About 1 in 5 businesses becomes a contactable lead</h2>
+      <div class="funnel">
+        <div class="f-row"><div class="bar" style="width:100%">1,000 businesses found on Google Maps</div><div class="pct">100%</div></div>
+        <div class="f-row"><div class="bar" style="width:77%">~770 have a website</div><div class="pct">77%</div></div>
+        <div class="f-row"><div class="bar" style="width:34%">~270 list an email</div><div class="pct">27%</div></div>
+        <div class="f-row"><div class="bar last" style="width:26%">~200 verified</div><div class="pct last">20%</div></div>
+      </div>
+      <div class="note">Based on the first live test (Arizona, flooring). Most emails are shared inboxes like info@ or office@, which is normal at this business size. Google Maps has no revenue or owner names.</div>
+    </div>
+    <div class="panel">
+      <div class="label">Where your files land</div>
+      <h2>Your folders</h2>
+      <div class="fmap">
+        <div class="frow hi"><code>leads/clean/</code><span>Your finished lists. Import into Instantly.</span><em>Start here</em></div>
+        <div class="frow"><code>leads/raw/</code><span>Everything scraped, before cleaning</span></div>
+        <div class="frow"><code>leads/runs.csv</code><span>Log of every scrape: date, state, cost, counts</span></div>
+        <div class="frow"><code>config/</code><span>Search terms and settings</span></div>
+        <div class="frow"><code>.env</code><span>Your API keys, private to your computer</span></div>
+      </div>
+      <div class="cost">
+        <div><div class="v">~$6</div><div class="k">Apify per 1,000 businesses</div></div>
+        <div><div class="v">1</div><div class="k">MillionVerifier credit per email checked</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Built by QwickStep AI for Blue Wave AI</span>
+    <span>Full guide · docs/Lead-Scraper-Guide.pdf</span>
+  </footer>
+</div>
+</body>
+</html>
