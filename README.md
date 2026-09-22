@@ -4,7 +4,16 @@ Google Maps → verified email list, one US state at a time, run by talking to C
 
 ![How the lead scraper works](docs/how-it-works.png)
 
-📄 **Short written guide:** [docs/Lead-Scraper-Guide.pdf](docs/Lead-Scraper-Guide.pdf)
+## The documents
+
+Everything you need is in the [`docs/`](docs/) folder. Both open straight in the browser.
+
+| Document | What it covers | Read it when |
+|---|---|---|
+| 📄 [**Lead Scraper Guide**](docs/Lead-Scraper-Guide.pdf) (3 pages) | Setup, how to run a scrape, where the files land, what to expect | Setting up, or running your first scrape |
+| 📄 [**Mailbox & Campaign Cheat Sheet**](docs/Mailbox-and-Campaign-Cheat-Sheet.pdf) (1 page) | Warmup, the mailbox tags, campaign settings, the sequence | Setting up or launching a campaign in Instantly |
+
+The picture above is the scraper in one view. It's also at [docs/how-it-works.png](docs/how-it-works.png).
 
 ## One-time setup (about 10 minutes, no terminal)
 
@@ -56,7 +65,7 @@ You only ever need one folder: **`leads/clean/`**.
 | `leads/runs.csv` | A log of every scrape: date, state, search terms, cost and lead counts. |
 | `config/` | Search terms and settings. Ask Claude to change them for you. |
 | `.env` | Your two API keys. Stays on your computer, never uploaded. |
-| `docs/` | The guide and the diagram. |
+| `docs/` | The two guides and the diagram. |
 | `.claude/` | The skill itself. No need to touch it. |
 
 Each scrape is named `date_STATE_segment`. So `leads/clean/2026-09-24_TX_flooring_clean-712.csv` is the Texas flooring list from Sept 24, with 712 verified emails. A second run of the same state on the same day gets `-2`.

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mailbox & Campaign Cheat Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  @page { size: Letter; margin: 0; }
+  :root {
+    --ink: #111110; --ink-dark: #2A2925; --ink-med: #6B6860; --ink-light: #9B9890;
+    --cream: #F7F4EF; --cream-dark: #EDE9E1; --white: #FFFFFF; --border: #DDD8CF;
+    --blue: #2563EB; --blue-tint: #EFF4FF; --green: #16A34A; --red: #DC2626;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--cream); }
+  body { font-family: "DM Sans", sans-serif; color: var(--ink-dark); font-size: 8.9pt; line-height: 1.4; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 8.5in; height: 11in; overflow: hidden; padding: 0.45in 0.6in 0.5in; position: relative; }
+
+  .top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+  .top img { height: 21px; }
+  .label { font-family: "DM Mono", monospace; font-size: 7.2pt; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-light); }
+
+  h1 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 22pt; line-height: 1.05; letter-spacing: -0.8px; color: var(--ink); margin: 3px 0 5px; }
+  .lead { font-size: 10pt; font-weight: 300; color: var(--ink-med); max-width: 5.6in; }
+  h2 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 13.5pt; color: var(--ink); margin: 2px 0 1px; letter-spacing: -0.3px; }
+  .sec { font-family: "DM Mono", monospace; font-size: 7.2pt; letter-spacing: 1.2px; color: var(--blue); text-transform: uppercase; margin-top: 12px; }
+  p { margin: 4px 0; }
+  .muted { color: var(--ink-med); }
+
+  code { font-family: "DM Mono", monospace; font-size: 8.5pt; background: var(--cream-dark); border-radius: 3px; padding: 1px 5px; color: var(--ink); }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; background: var(--white); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; }
+  th { font-family: "DM Mono", monospace; font-weight: 400; font-size: 7pt; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-light); text-align: left; padding: 5px 11px; border-bottom: 1px solid var(--border); background: var(--cream); }
+  td { padding: 3px 10px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 8.4pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.k { white-space: nowrap; font-weight: 500; color: var(--ink); }
+  td.why { color: var(--ink-med); }
+
+  .box { border-radius: 5px; padding: 8px 12px; margin: 8px 0 2px; font-size: 8.4pt; }
+  .box .t { font-family: "DM Mono", monospace; font-size: 7.2pt; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 2px; }
+  .warn { background: #FDF2F2; color: #7F1D1D; } .warn .t { color: var(--red); }
+  .tip { background: var(--blue-tint); color: #1E3A8A; } .tip .t { color: var(--blue); }
+
+  .flow { display: flex; align-items: center; gap: 7px; margin: 9px 0 3px; flex-wrap: wrap; }
+  .node { font-family: "DM Mono", monospace; font-size: 8.4pt; background: var(--white); border: 1px solid var(--border); border-radius: 3px; padding: 5px 9px; color: var(--ink); }
+  .node.b { border-color: var(--blue); color: var(--blue); background: var(--blue-tint); }
+  .node.r { border-color: #F3C9C9; color: var(--red); background: #FDF2F2; }
+  .flow span.a { color: var(--ink-light); font-size: 9pt; }
+
+  ul { list-style: none; margin-top: 4px; }
+  ul li { position: relative; padding: 2px 0 2px 18px; }
+  ul li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--ink); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  .foot { position: absolute; left: 0.65in; right: 0.65in; bottom: 0.35in; display: flex; justify-content: space-between; padding-top: 9px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="top"><img src="assets/qwickstep-lockup.svg" alt="QwickStep AI"><span class="label">Blue Wave AI &middot; Cheat sheet</span></div>
+
+  <div class="label">Mailboxes &amp; campaigns</div>
+  <h1>How the sending setup runs</h1>
+
+  <div class="sec">01 &middot; Warmup</div>
+  <h2>Every mailbox warms up for 21 days</h2>
+  <p class="muted">Instantly runs warmup automatically once a mailbox is connected. <b>21 days minimum</b> before it sends a single cold email, and domain age doesn't count. <b>Leave warmup on after launch</b>, it holds reputation up while campaigns run. At full speed each mailbox sends <b>15 cold emails a day</b>, so 450 a day across 30 mailboxes.</p>
+
+  <div class="sec">02 &middot; Tags</div>
+  <h2>Four tags, one per mailbox</h2>
+  <p class="muted">Campaigns pull their senders <b>by tag</b>, so you move a mailbox between campaigns by changing its tag, never by picking addresses by hand.</p>
+  <table>
+    <tr><th>Tag</th><th>Meaning</th><th>When it gets used</th></tr>
+    <tr><td class="k"><code>warming</code></td><td>New mailbox, still in its 21 days</td><td class="why">Swap for <code>insurance</code> when warmup finishes</td></tr>
+    <tr><td class="k"><code>insurance</code></td><td>Warmed and ready, no campaign yet</td><td class="why">The standby pool you pull replacements from</td></tr>
+    <tr><td class="k"><code>camp-&lt;name&gt;</code></td><td>Sending for one campaign, e.g. <code>camp-flooring</code></td><td class="why">New campaign: create the tag, put it on the mailboxes you want sending, set <b>Accounts to use</b> to that one tag</td></tr>
+    <tr><td class="k"><code>recovery</code></td><td>Health below 98%, resting on warmup only</td><td class="why">Remove its <code>camp-</code> tag, add this, pull a replacement from <code>insurance</code>. Back at 98%+, return it to the campaign. Still low after two weeks, retire it</td></tr>
+  </table>
+
+  <div class="box warn"><div class="t">Two rules that break things</div><b>One tag per mailbox</b> (remove the old one when you add the new one) and <b>one tag per campaign</b>, because Instantly treats two selected tags as "or" and quietly pulls in mailboxes you didn't intend.</div>
+
+  <div class="sec">03 &middot; Campaign settings</div>
+  <h2>Set these every time</h2>
+  <div class="two">
+    <table>
+      <tr><th>Setting</th><th>Value</th></tr>
+      <tr><td class="k">Accounts to use</td><td>One <code>camp-</code> tag</td></tr>
+      <tr><td class="k">Daily limit / mailbox</td><td>15</td></tr>
+      <tr><td class="k">Schedule</td><td>Mon&ndash;Fri, 8am&ndash;5pm, lead's timezone</td></tr>
+      <tr><td class="k">Stop on reply</td><td>On</td></tr>
+      <tr><td class="k">Open tracking</td><td>Off</td></tr>
+      <tr><td class="k">Link tracking</td><td>Off</td></tr>
+      <tr><td class="k">Block list</td><td>Your customers + open deals</td></tr>
+    </table>
+    <table>
+      <tr><th>Sequence</th><th>Send</th><th>Purpose</th></tr>
+      <tr><td class="k">Step 1</td><td>Day 1</td><td class="why">The offer, short</td></tr>
+      <tr><td class="k">Step 2</td><td>Day 3</td><td class="why">Same thread, new angle</td></tr>
+      <tr><td class="k">Step 3</td><td>Day 7</td><td class="why">Short close-out</td></tr>
+    </table>
+  </div>
+  <p class="muted" style="margin-top:6px"><b>Why:</b> tracking pixels and rewritten links are spam signals, and opens don't book appointments. Three steps because the market is only ~12,000 businesses, so extra touches burn the list. Plain text only.</p>
+
+  <div class="box tip"><div class="t">Before a campaign goes live</div>Mailboxes 21+ days warmed and at 98%+ &middot; list verified and block list loaded &middot; one <code>camp-</code> tag selected &middot; tracking off, stop-on-reply on, limit 15 &middot; spam test passed from those same mailboxes.</div>
+
+  <div class="foot"><span class="label">QwickStep AI &middot; jun@qwickstep.ai</span><span class="label">Bounce over 2% ends campaigns &middot; verify every list</span></div>
+</div>
+
+</body>
+</html>
