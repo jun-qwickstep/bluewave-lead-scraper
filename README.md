@@ -2,18 +2,18 @@
 
 Google Maps → verified email list, one US state at a time, run by talking to Claude Code.
 
-![How the lead scraper works](docs/how-it-works.png)
+![How the lead scraper works](how-it-works.png)
 
 ## The documents
 
-Everything you need is in the [`docs/`](docs/) folder. Both open straight in the browser.
+The three files at the top of this repo are everything you need. Both PDFs open straight in the browser.
 
 | Document | What it covers | Read it when |
 |---|---|---|
-| 📄 [**Lead Scraper Guide**](docs/Lead-Scraper-Guide.pdf) (3 pages) | Setup, how to run a scrape, where the files land, what to expect | Setting up, or running your first scrape |
-| 📄 [**Mailbox & Campaign Cheat Sheet**](docs/Mailbox-and-Campaign-Cheat-Sheet.pdf) (1 page) | Warmup, the mailbox tags, campaign settings, the sequence | Setting up or launching a campaign in Instantly |
+| 📄 [**Lead Scraper Guide**](Lead-Scraper-Guide.pdf) (3 pages) | Setup, how to run a scrape, where the files land, what to expect | Setting up, or running your first scrape |
+| 📄 [**Mailbox & Campaign Cheat Sheet**](Mailbox-and-Campaign-Cheat-Sheet.pdf) (1 page) | Warmup, the mailbox tags, campaign settings, the sequence | Setting up or launching a campaign in Instantly |
 
-The picture above is the scraper in one view. It's also at [docs/how-it-works.png](docs/how-it-works.png).
+The picture above is the whole thing in one view ([how-it-works.png](how-it-works.png)).
 
 ## One-time setup (about 10 minutes, no terminal)
 
@@ -58,15 +58,15 @@ Claude will:
 
 You only ever need one folder: **`leads/clean/`**.
 
-| Folder / file | What's in it |
-|---|---|
-| **`leads/clean/`** | **Your finished lists. Start here.** One CSV per scrape, verified emails only. Import these into Instantly. |
-| `leads/raw/` | Everything Google Maps returned, before cleaning. Only for reference. |
-| `leads/runs.csv` | A log of every scrape: date, state, search terms, cost and lead counts. |
-| `config/` | Search terms and settings. Ask Claude to change them for you. |
-| `.env` | Your two API keys. Stays on your computer, never uploaded. |
-| `docs/` | The two guides and the diagram. |
-| `.claude/` | The skill itself. No need to touch it. |
+| Folder / file | What's in it | Touch it? |
+|---|---|---|
+| **`leads/clean/`** | **Your finished lists.** One CSV per scrape, verified emails only. Import these into Instantly. | **Yes, this is the one** |
+| `leads/raw/` | Everything Google Maps returned, before cleaning. | Rarely |
+| `leads/runs.csv` | A log of every scrape: date, state, cost, counts. | If curious |
+| `.env` | Your two API keys. Pasted once at setup. | Setup only |
+| `config/` | Search terms and settings. Ask Claude to change them. | Ask Claude |
+| `.claude/` | The skill itself, what Claude reads to run a scrape. | Ignore |
+| `docs/` | The design files the PDFs were made from. | Ignore |
 
 Each scrape is named `date_STATE_segment`. So `leads/clean/2026-09-24_TX_flooring_clean-712.csv` is the Texas flooring list from Sept 24, with 712 verified emails. A second run of the same state on the same day gets `-2`.
 

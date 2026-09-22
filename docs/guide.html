@@ -61,6 +61,7 @@
   .frow code { background: none; padding: 0; font-size: 8.8pt; }
   .frow.hi { background: var(--blue-tint); }
   .frow.hi span, .frow.hi b { color: #1E3A8A; }
+  .frow .t2 { font-family: "DM Mono", monospace; font-size: 7pt; letter-spacing: .6px; text-transform: uppercase; color: var(--ink-light); white-space: nowrap; }
   .frow em { font-style: normal; font-family: "DM Mono", monospace; font-size: 7pt; letter-spacing: .8px; text-transform: uppercase; background: var(--blue); color: var(--white); padding: 2px 6px; border-radius: 3px; }
   .funnel { margin-top: 12px; }
   .f { margin-bottom: 9px; }
@@ -153,19 +154,20 @@
 <div class="page">
   <div class="top"><img src="assets/qwickstep-lockup.svg" alt="QwickStep AI"><span class="label">Blue Wave AI · Lead Scraper Guide</span></div>
 
-  <div class="sec">03 · The output</div>
-  <h2>Where everything is</h2>
-  <p class="muted">You only ever need one folder: <b style="color:var(--ink)">leads/clean/</b>. Everything else runs in the background.</p>
+  <div class="sec">03 · Your folder</div>
+  <h2>What's in here, and what to ignore</h2>
+  <p class="muted">Three documents sit at the top, and <b style="color:var(--ink)">leads/</b> is the only folder you open. The rest is machinery.</p>
   <div class="fmap">
-    <div class="frow hi"><code>leads/clean/</code><span><b>Your finished lists.</b> One CSV per scrape, verified emails only. Import these into Instantly.</span><em>Start here</em></div>
-    <div class="frow"><code>leads/raw/</code><span>Everything Google Maps returned, before cleaning. Only for reference.</span></div>
-    <div class="frow"><code>leads/runs.csv</code><span>A log of every scrape: date, state, search terms, cost and lead counts.</span></div>
-    <div class="frow"><code>config/</code><span>Search terms and settings. Ask Claude to change them for you.</span></div>
-    <div class="frow"><code>.env</code><span>Your two API keys. Stays on your computer, never uploaded.</span></div>
-    <div class="frow"><code>docs/</code><span>This guide and the diagram.</span></div>
-    <div class="frow"><code>.claude/</code><span>The skill itself. No need to touch it.</span></div>
+    <div class="frow hi"><code>leads/clean/</code><span><b>Your finished lists.</b> One CSV per scrape, verified emails only. Import these into Instantly.</span><em>Open this</em></div>
+    <div class="frow"><code>leads/raw/</code><span>Everything Google Maps returned, before cleaning.</span><span class="t2">Rarely</span></div>
+    <div class="frow"><code>leads/runs.csv</code><span>A log of every scrape: date, state, cost, counts.</span><span class="t2">If curious</span></div>
+    <div class="frow"><code>.env</code><span>Your two API keys. Pasted once at setup, then forget it.</span><span class="t2">Setup only</span></div>
+    <div class="frow"><code>config/</code><span>Search terms and settings. Ask Claude to change them.</span><span class="t2">Ask Claude</span></div>
+    <div class="frow"><code>.claude/</code><span>The skill itself, what Claude reads to run a scrape.</span><span class="t2">Ignore</span></div>
+    <div class="frow"><code>docs/</code><span>The design files these PDFs were made from.</span><span class="t2">Ignore</span></div>
+    <div class="frow"><code>README.md</code><span>The setup steps, shown on the GitHub page.</span><span class="t2">Ignore</span></div>
   </div>
-  <p class="muted" style="margin-top:8px">Each scrape is named <code>date_STATE_segment</code>. So <code>leads/clean/2026-09-24_TX_flooring_clean-712.csv</code> is the Texas flooring list from Sept 24, with 712 verified emails.</p>
+  <p class="muted" style="margin-top:6px"><code>leads/clean/2026-09-24_TX_flooring_clean-712.csv</code> = the Texas flooring list from Sept 24, 712 verified emails. <b style="color:var(--ink)">Never delete anything in <code>leads/clean/</code></b>, it's how the scraper remembers who has already been contacted.</p>
 
   <div class="two">
     <div>
@@ -195,7 +197,7 @@
   <h2>Things you can say</h2>
   <div class="two" style="gap:10px">
     <div>
-      <div class="say">How much would all of Florida coating cost?</div>
+      <div class="say">How much would Florida coating cost?</div>
       <div class="say">Is the Texas scrape done yet?</div>
     </div>
     <div>
